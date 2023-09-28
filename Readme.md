@@ -23,7 +23,7 @@ The tool can be run with any .NET runtime that supports C# 9 or later.
 Here's an example of how to use the tool:
 
 ```csharp
-const string directoryPath = @"C:\Users\W31rd0\source\repos\work\Apro\Apro.AutoUpdater";
+const string directoryPath = @"C:\Path\To\Codebase";
 const int iterations = 10;
 var question = "Where and how do patches and patch files get stored?";
 
