@@ -7,15 +7,18 @@ using OpenAI.Managers;
 using OpenAI.ObjectModels;
 using OpenAI.ObjectModels.RequestModels;
 
+const string directoryPath = @"C:\Users\W31rd0\source\repos\work\Apro\Apro.AutoUpdater";
+const int iterations = 10;
+// var question = "How do I make the logging messages arrive faster in the file?";
+var question = "Where and how do patches and patch files get stored?";
+
 var apiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY");
 var openAiService = new OpenAIService(new OpenAiOptions()
 {
     ApiKey =  apiKey,
 });
 
-const int iterations = 10;
-// var question = "How do I make the logging messages arrive faster in the file?";
-var question = "Where and how do patches and patch files get stored?";
+
 
 Console.WriteLine("Developers give answers to questions");
 var allRelevantClasses = new ConcurrentBag<string>();
@@ -126,7 +129,6 @@ Evaluate the classes that your colleague has identified and based on their evalu
 static IEnumerable<(string file, string className)> GetClasses()
 {
 
-    string directoryPath = @"C:\Users\W31rd0\source\repos\work\Apro\Apro.AutoUpdater";
 
     if (!Directory.Exists(directoryPath))
     {
